@@ -1,11 +1,14 @@
 package calculator;
 
+import java.text.BreakIterator;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        while (true) {
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
         //Scanner를 사용하여 양의 정수를 입력받고 변수에 저장합니다.
@@ -17,6 +20,8 @@ public class App {
 
         System.out.print("두 번째 숫자를 입력하세요: ");
         int num2 = sc.nextInt();
+
+
 
         int result = 0; // switch문에서 result 변수를 사용하기위해 선언
 
@@ -45,6 +50,14 @@ public class App {
                 System.out.println("정확한 사칙연산 기호를 입력해주세요.");
                 break;
         }
+            sc.nextLine(); //버퍼에 남아있는 개행문자 제거
+            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String exit = sc.nextLine();
+            if (exit.equals("exit")) {
+                break;
+            }
+    }
+
 
     }
 
