@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Calculator {
-    private LinkedList<Integer> resultList = new LinkedList<>();
+    public LinkedList<Integer> resultList = new LinkedList<>();
     // 연산 결과를 저장하기위한 컬렉션 선언 및 생성
 
     public int calculate(int firstNumber, int secondNumber, char operator) throws InputErrorException {
@@ -20,9 +20,9 @@ public class Calculator {
                 result = firstNumber * secondNumber;
                 break;
             case '/' :
-                if (secondNumber == 0) { // 나눗셈 연산에서 두번째 정수에 0이 입력되는 경우 Exception 발생
+                if (secondNumber == 0)  // 나눗셈 연산에서 두번째 정수에 0이 입력되는 경우 Exception 발생
                     throw new InputErrorException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                }
+
                 else
                     result = firstNumber / secondNumber;
                 break;
