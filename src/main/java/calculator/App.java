@@ -8,6 +8,9 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        int[] resultList = new int[10];
+        int index = 0;
+
         while (true) {
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -50,6 +53,7 @@ public class App {
                 System.out.println("정확한 사칙연산 기호를 입력해주세요.");
                 break;
         }
+            resultList[index++] = result; // 연산의 결과를 배열에 저장하고 index를 하나씩 증가
             sc.nextLine(); //버퍼에 남아있는 개행문자 제거
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
