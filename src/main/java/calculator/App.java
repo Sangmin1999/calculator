@@ -53,14 +53,23 @@ public class App {
                 System.out.println("정확한 사칙연산 기호를 입력해주세요.");
                 break;
         }
-            resultList[index++] = result; // 연산의 결과를 배열에 저장하고 index를 하나씩 증가
-            sc.nextLine(); //버퍼에 남아있는 개행문자 제거
-            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String exit = sc.nextLine();
-            if (exit.equals("exit")) {
-                break;
+            if (index >= resultList.length - 1) { // index가 9가 되면
+                System.out.println("저장 공간이 부족하여 첫번째 값을 지우고 입력한 값을 저장합니다.");
+                for (int i = 0; i < resultList.length - 1; i++) { // 0~8까지 반복해서 입력
+                    resultList[i] = resultList[i + 1]; // 다음 인덱스 값을 현제 인덱스 값에 넣는다
+                }
+                resultList[resultList.length-1] = result; // 마지막 배열에 현제 입력값을 넣는다
+            }else { // 인덱스가 9미만일 때
+                resultList[index++] = result; // 연산의 결과를 배열에 저장하고 index를 하나씩 증가
             }
-    }
+
+                sc.nextLine(); //버퍼에 남아있는 개행문자 제거
+                System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
+                String exit = sc.nextLine();
+                if (exit.equals("exit")) {
+                    break;
+                }
+            }
 
 
     }
