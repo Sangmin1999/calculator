@@ -1,6 +1,8 @@
 package calculator;
 
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class App {
@@ -8,8 +10,10 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] resultList = new int[10];
         int index = 0;
+
+        ArrayList<Integer> resultList = new ArrayList<Integer>();
+        // 크기가 고정되지 않아야 하므로 동적배열을 사용, 정수형 값을 지정해야 하므로 Integer 객체 저장
 
         while (true) {
 
@@ -53,14 +57,12 @@ public class App {
                 System.out.println("정확한 사칙연산 기호를 입력해주세요.");
                 break;
         }
-            if (index >= resultList.length - 1) { // index가 9가 되면
-                System.out.println("저장 공간이 부족하여 첫번째 값을 지우고 입력한 값을 저장합니다.");
-                for (int i = 0; i < resultList.length - 1; i++) { // 0~8까지 반복해서 입력
-                    resultList[i] = resultList[i + 1]; // 다음 인덱스 값을 현제 인덱스 값에 넣는다
-                }
-                resultList[resultList.length-1] = result; // 마지막 배열에 현제 입력값을 넣는다
-            }else { // 인덱스가 9미만일 때
-                resultList[index++] = result; // 연산의 결과를 배열에 저장하고 index를 하나씩 증가
+                resultList.add(result); //리스트에 결과 저장
+
+                System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+
+            if (sc.next().equals("remove")) {
+                resultList.remove(0); //"remove" 입력시 가장 첫번째 입력값 제거
             }
 
                 sc.nextLine(); //버퍼에 남아있는 개행문자 제거
