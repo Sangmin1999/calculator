@@ -57,7 +57,7 @@ public class App {
                 System.out.println("정확한 사칙연산 기호를 입력해주세요.");
                 break;
         }
-                resultList.add(result); //리스트에 결과 저장
+                resultList.add(result);//리스트에 결과 저장
 
                 System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
 
@@ -65,7 +65,14 @@ public class App {
                 resultList.remove(0); //"remove" 입력시 가장 첫번째 입력값 제거
             }
 
-                sc.nextLine(); //버퍼에 남아있는 개행문자 제거
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            if (sc.next().equals("inquiry")) {
+                for (int results : resultList) { //리스트에 저장된 배열의 수만큼 순회하면서 반복
+                    System.out.print(results +" "); // 결과 값을 한칸씩 띄어주기 위해서
+                }
+                System.out.println(); // 조회 값과 exit문이 겹쳐서 나오는 것을 막기 위해서
+            }
+                sc.nextLine(); //버퍼에 남아있는 개행문자 제거}
                 System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
                 String exit = sc.nextLine();
                 if (exit.equals("exit")) {
