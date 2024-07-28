@@ -43,7 +43,8 @@ public class App {
             System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
 
             if (sc.next().equals("remove")) {
-                calculator.getResultList().remove(0); //"remove" 입력시 가장 첫번째 입력값 제거
+                calculator.removeResultList(); //"remove" 입력시 가장 첫번째 입력값 제거
+                // calculator 클래스에 공용 메서드를 호출
 
             }
 
