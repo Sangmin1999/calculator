@@ -50,10 +50,7 @@ public class App {
 
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if (sc.next().equals("inquiry")) {
-                for (int results : calculator.getResultList()) { //리스트에 저장된 배열의 수만큼 순회하면서 반복
-                    System.out.print(results +" "); // 결과 값을 한칸씩 띄어주기 위해서
-                }
-                System.out.println(); // 조회 값과 exit문이 겹쳐서 나오는 것을 막기 위해서
+                calculator.inquiryResultList(); // 결과 조회
             }
                 sc.nextLine(); //버퍼에 남아있는 개행문자 제거
                 System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");

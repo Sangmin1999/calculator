@@ -43,4 +43,13 @@ public class Calculator {// 연산 결과를 저장하고 있는 컬렉션 필�
     public void removeResultList() { // 공용 메서드 선언 , 반환값은 없고(void), 파라미터도 받지 않는다.
         resultList.remove(0);
     }
+    // 5.Calculator 클래스에 저장된 연산 결과들을 조회하는 기능을 가진 메서드를 구현한 후
+    // App 클래스의 main 메서드에 조회 메서드가 활용될 수 있도록 수정합니다.
+    public void inquiryResultList() { // 공용 메서드 선언
+        for (int results : resultList) { //리스트에 저장된 배열의 수만큼 순회하면서 반복
+            System.out.print(results + " "); // 결과 값을 한칸씩 띄어주기 위해서
+        }
+        System.out.println(); // 조회 값과 exit문이 겹쳐서 나오는 것을 막기 위해서
+    }
+
 }
