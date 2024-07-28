@@ -34,7 +34,7 @@ public class App {
                 int result = calculator.calculate(firstNumber, secondNumber, operator);
                 // calculator.calculate()를 호출하여 계산을 하고 결과를 result에 저장
                 System.out.println("결과: " + result);
-                calculator.resultList.add(result);
+                calculator.getResultList().add(result);
 
             } catch (InputErrorException e) { // 잘못된 입력이 발생할시 이를 잡아서 에러 메세지를 출력
                 System.out.println(e.getMessage());
@@ -43,13 +43,13 @@ public class App {
             System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
 
             if (sc.next().equals("remove")) {
-                calculator.resultList.remove(0); //"remove" 입력시 가장 첫번째 입력값 제거
+                calculator.getResultList().remove(0); //"remove" 입력시 가장 첫번째 입력값 제거
 
             }
 
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if (sc.next().equals("inquiry")) {
-                for (int results : calculator.resultList) { //리스트에 저장된 배열의 수만큼 순회하면서 반복
+                for (int results : calculator.getResultList()) { //리스트에 저장된 배열의 수만큼 순회하면서 반복
                     System.out.print(results +" "); // 결과 값을 한칸씩 띄어주기 위해서
                 }
                 System.out.println(); // 조회 값과 exit문이 겹쳐서 나오는 것을 막기 위해서
