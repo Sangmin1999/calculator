@@ -10,7 +10,6 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int index = 0;
         Calculator calculator = new Calculator(); // Calculator 클래스의 인스턴스를 생성
 
         while (true) {
