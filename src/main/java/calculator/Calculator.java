@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.LinkedList;
 
-public class Calculator {// 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정
+public abstract class Calculator {// 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정
     private LinkedList<Integer> resultList; // private 접근 제어자 사용
     // 연산 결과를 저장하기 위한 컬렉션 선언 및 생성
     private LinkedList<Double> circleArea; // 원의 넓이 결과를 저장하는 필드 선언
