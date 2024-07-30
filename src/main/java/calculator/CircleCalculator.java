@@ -5,7 +5,7 @@ public class CircleCalculator extends Calculator{
 
     // 사용하지 않는 오버라이딩 메서드를 접근제어자를 protected를 써서 접근 불가능하게 만듬
     @Override
-    protected double calculate(int firstNumber, int secondNumber, char operator) throws InputErrorException {
+    protected int calculate(int firstNumber, int secondNumber, char operator) throws InputErrorException {
         return 0;
     }
 
