@@ -1,11 +1,12 @@
 package calculator;
 
 public class ArithmeticCalculator extends Calculator { // Calculator 클래스를 상속
-    private AddOperator addOperator; // 사칙연산 클래스 필드 선언
-    private SubstractOperator substractOperator;
-    private MultiplyOperator multiplyOperator;
-    private DivideOperator divideOperator;
-    private ModOperator modOperator;
+    // 초기화된 이후에 변경되지 않으므로 (final)
+    private final AddOperator addOperator; // 사칙연산 클래스 필드 선언
+    private final SubstractOperator substractOperator;
+    private final MultiplyOperator multiplyOperator;
+    private final DivideOperator divideOperator;
+    private final ModOperator modOperator;
 
     public ArithmeticCalculator() { // 부모 생성자를 자동 호출
         addOperator = new AddOperator(); // 사칙연산 클래스 필드 생성
