@@ -36,7 +36,7 @@ public abstract class Calculator {// 연산 결과를 저장하고 있는 컬렉
     }
 
     // 추상 메서드
-    protected abstract double calculate(int firstNumber, int secondNumber, char operator) throws InputErrorException;
+    protected abstract int calculate(int firstNumber, int secondNumber, char operator) throws InputErrorException;
     protected abstract double calculate(int radius);
 
 }
